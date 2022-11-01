@@ -41,6 +41,6 @@ console.log (typeof c);
 let name = prompt("Name");
 let patronymic = prompt("patronymic");
 let age = prompt("age");
-console.log(name + ' ' + patronymic + ' ' + age);
+console.log(name + ' ' + patronymic + ' ' + age)
 
 

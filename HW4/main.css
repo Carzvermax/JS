@@ -1,0 +1,11 @@
+.product-card {
+    background: #cebdf3;
+}
+.product-image {
+    width: 100px;
+}
+.product-title {
+    color: white;
+    background: black;
+    width: 70px;
+}

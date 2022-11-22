@@ -146,11 +146,12 @@
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
 
-// let arr = [{name: 'Dima', age: 13}, {model: 'Camry'}]
+// let arr = [{name: 'Dima', age: 13}, {model: 'Camry'}, {id: 1}]
 // function key(array){
 //     let array1 = []
 //     for (let i = 0; i < array.length; i++) {
 //     let array2 = (Object.keys(array[i]))
+//         console.log(array2);
 //         for (const item of array2) {
 //             array1.push(item)
 //         }
@@ -164,7 +165,7 @@
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
 
 let arr = [{name: 'Dima', age: 13}, {model: 'Camry'}]
-function key(array){
+const foo = function (array) {
     let array1 = []
     for (let i = 0; i < array.length; i++) {
         let array2 = (Object.values(array[i]))
@@ -172,6 +173,6 @@ function key(array){
             array1.push(item)
         }
     }
-    console.log(array1)
-}
-key(arr)
+    console.log(array1)}
+
+foo(arr)

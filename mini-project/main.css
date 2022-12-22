@@ -1,0 +1,37 @@
+.bodyDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 1050px;
+}
+.user {
+    height: 75px;
+    width: 47%;
+    background: #ffffff;
+    text-align: center;
+    align-items: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    display: block;
+    margin: 8px;
+    border-radius: 20px;
+}
+.href {
+    display: block;
+}
+h1 {
+    text-align: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    background: white;
+    font-family: cursive;
+}
+body {
+    margin-top: 10px;
+    background-color: #333;
+    background-image: url('img.png');
+}

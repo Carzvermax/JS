@@ -1,0 +1,41 @@
+body {
+    background-color: #333;
+    background-image: url('img.png');
+    margin-top: 10px;
+}
+.post {
+    text-align: center;
+    box-sizing: border-box;
+    border: 5px solid black;
+    margin: 15px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    background: white;
+}
+.comments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.comment {
+    width: 20%;
+    background: #ffffff;
+    text-align: center;
+    align-items: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    display: block;
+    margin: 8px;
+    border-radius: 20px;
+}
+.head {
+    text-align: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+    background: white;
+    font-family: cursive;
+}

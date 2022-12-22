@@ -1,26 +1,30 @@
 const url = new URL(location.href);
 const id = url.searchParams.get('data');
-
+let h1 = document.createElement('h1')
+h1.innerText = 'User Details'
+document.body.append(h1)
 fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then(value => value.json())
     .then(value => {
+        const container = document.createElement('div')
+        container.classList.add('container')
         const usersDiv = document.createElement('div')
         for (const item in value) {
-            const userDiv = document.createElement('div');
+            const userDiv = document.createElement('p');
             if (typeof value[item] !== 'object') {
-                userDiv.innerText = `${item} -- ${value[item]}`;
+                userDiv.innerHTML = `<em>${item}:</em> ${value[item]}`;
             } else {
-                userDiv.innerText = `${item} :`
+                userDiv.innerHTML = `<b>${item} :</b>`
                 for (const key in value[item]) {
-                    const userInnerDiv = document.createElement('div');
+                    const userInnerDiv = document.createElement('p');
                     if (typeof value[item][key] !== 'object') {
-                        userInnerDiv.innerText = `${key} -- ${value[item][key]}`;
+                        userInnerDiv.innerHTML = `<em>${key}:</em> ${value[item][key]}`;
                     } else {
-                        userInnerDiv.innerText = `${key} :`;
+                        userInnerDiv.innerHTML = `<b>${key} :</b>`;
                         for (const element in value[item][key]) {
-                            const htmlDivElement = document.createElement('div');
+                            const htmlDivElement = document.createElement('p');
                             if (typeof value[item][key][element] !== 'object') {
-                                htmlDivElement.innerText = `${element} -- ${value[item][key][element]}`;
+                                htmlDivElement.innerHTML = `<em>${element}:</em> ${value[item][key][element]}`;
                             }
                             userInnerDiv.append(htmlDivElement);
                         }
@@ -30,25 +34,31 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
             }
             usersDiv.append(userDiv);
         }
-        document.body.append(usersDiv)
+        usersDiv.classList.add('user')
+        container.append(usersDiv)
         const userButton = document.createElement('button')
-        userButton.innerText = "post of current user"
-        document.body.append(userButton)
+        userButton.innerHTML = `<b>Post of current user</b>`
+        userButton.classList.add('button')
+        container.append(userButton)
         userButton.onclick = function () {
           fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
               .then(value => value.json())
               .then(value => {
                   const postsDiv = document.createElement('div')
+                  postsDiv.classList.add('posts')
                   for (const valueElement of value) {
                       const postDiv = document.createElement('div')
-                      postDiv.innerText = `${valueElement.title}`
+                      postDiv.classList.add('post')
+                      postDiv.innerHTML = `<b>Title:</b> ${valueElement.title}`
                       const anchor = document.createElement('a');
-                      anchor.innerText = `Click me`;
+                      anchor.innerText = `Post Details`;
+                      anchor.classList.add('href')
                       postDiv.append(anchor);
                       anchor.href = `post-details.html?userId=${id}&data=${valueElement.id}`;
                       postsDiv.append(postDiv)
-                      document.body.append(postsDiv);
+                      container.append(postsDiv);
                   }
               })
         }
+        document.body.append(container)
     });

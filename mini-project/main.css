@@ -3,18 +3,19 @@
     flex-wrap: wrap;
     justify-content: center;
     height: 1050px;
+    margin: 1%;
 }
 .user {
     height: 75px;
-    width: 47%;
+    width: 50%;
     background: #ffffff;
     text-align: center;
     align-items: center;
     border: 5px solid black;
     box-sizing: border-box;
     display: block;
-    margin: 8px;
-    border-radius: 20px;
+    margin: 0;
+    border-radius: 100px;
 }
 .href {
     display: block;
@@ -23,10 +24,10 @@ h1 {
     text-align: center;
     border: 5px solid black;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 100px;
     margin: 0;
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 1%;
+    margin-left: 1%;
     background: white;
     font-family: cursive;
 }

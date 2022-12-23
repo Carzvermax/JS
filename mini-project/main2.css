@@ -9,7 +9,7 @@ body {
     border: 5px solid black;
     margin: 15px;
     margin-bottom: 35px;
-    border-radius: 20px;
+    border-radius: 100px;
     background: white;
 }
 .comments {
@@ -26,13 +26,13 @@ body {
     box-sizing: border-box;
     display: block;
     margin: 8px;
-    border-radius: 20px;
+    border-radius: 50px;
 }
 .head {
     text-align: center;
     border: 5px solid black;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 100px;
     margin: 0;
     margin-right: 15px;
     margin-left: 15px;

@@ -7,7 +7,9 @@ body {
     text-align: center;
     box-sizing: border-box;
     border: 5px solid black;
-    margin: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 15px;
     margin-bottom: 35px;
     border-radius: 100px;
     background: white;
@@ -34,8 +36,8 @@ body {
     box-sizing: border-box;
     border-radius: 100px;
     margin: 0;
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 5%;
+    margin-left: 5%;
     background: white;
     font-family: cursive;
 }

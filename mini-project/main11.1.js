@@ -41,6 +41,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         userButton.classList.add('button')
         container.append(userButton)
         userButton.onclick = function () {
+            this.classList.add('btnclick')
           fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
               .then(value => value.json())
               .then(value => {
@@ -50,11 +51,15 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
                       const postDiv = document.createElement('div')
                       postDiv.classList.add('post')
                       postDiv.innerHTML = `<b>Title:</b> ${valueElement.title}`
-                      const anchor = document.createElement('a');
-                      anchor.innerText = `Post Details`;
-                      anchor.classList.add('href')
-                      postDiv.append(anchor);
-                      anchor.href = `post-details.html?userId=${id}&data=${valueElement.id}`;
+                      const button = document.createElement('button');
+                      button.innerText = `Post details`;
+                      button.classList.add('buttonDetails')
+                      button.onclick = function () {
+                          document.location= `post-details.html?userId=${id}&data=${valueElement.id}`
+                          this.classList.add('btnDetailsclick')
+                      }
+                      postDiv.append(button);
+                      // anchor.href = `post-details.html?userId=${id}&data=${valueElement.id}`;
                       postsDiv.append(postDiv)
                       container.append(postsDiv);
                   }

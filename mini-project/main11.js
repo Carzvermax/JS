@@ -17,10 +17,14 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
             usersDiv.classList.add('user')
             container.append(usersDiv);
 
-            const anchor = document.createElement('a');
-            anchor.innerText = `User details`;
-            anchor.classList.add('href')
-            usersDiv.append(anchor);
-            anchor.href = `user-details.html?data=${item.id}`;
+            const button = document.createElement('button');
+            button.innerText = `User details`;
+            button.classList.add('button')
+            usersDiv.append(button);
+            button.onclick = function () {
+                document.location= `user-details.html?data=${item.id}`
+                this.classList.add('btnclick')
+            }
+            // anchor.href = `user-details.html?data=${item.id}`;
         }
     })
